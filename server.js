@@ -1,9 +1,13 @@
 require("dotenv").config();
 const express = require("express");
+const dns = require('node:dns'); 
 const mongoose = require("mongoose");
 const medicienRouter = require("./routes/Routes.js");
 
+
 const app = express();
+dns.setServers(['1.1.1.1', '8.8.8.8']);
+
 app.use(express.json());
 const PORT = process.env.PORT || 6060;
 
